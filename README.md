@@ -143,10 +143,8 @@ Python (need to download)
 ```
 import urllib.request
 import geopandas as gpd
-url = "https://storage.googleapis.com/nmfs_odp_nwfsc/CB/nwm_daily_means/wr18/flowline/WR_18_Flowline.parquet"
-local_path = "WR_18_Flowline.parquet"
-urllib.request.urlretrieve(url, local_path)
-gdf = gpd.read_parquet("WR_18_Flowline.parquet")
+url = "gcs://nmfs_odp_nwfsc/CB/nwm_daily_means/wr1718/flowline/WR_18_Flowline.parquet"
+gdf = gpd.read_parquet(url, storage_options={"token": "anon"})
 gdf = gdf[gdf["HUC4"] == "1810"]  # optional filter
 gdf.plot()
 ```
