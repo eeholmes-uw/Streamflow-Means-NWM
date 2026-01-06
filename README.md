@@ -139,7 +139,7 @@ This is the map of where the streams and rivers are.
 
 ### Accessing the flowline data
 
-Python (need to download)
+Python
 ```
 import urllib.request
 import geopandas as gpd
@@ -149,7 +149,7 @@ gdf = gdf[gdf["HUC4"] == "1810"]  # optional filter
 gdf.plot()
 ```
 
-R (can read from url but need to monkey with geometry)
+R (need to monkey with geometry)
 ```
 library(arrow)
 library(sf)
